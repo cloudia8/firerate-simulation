@@ -33,7 +33,7 @@ from dataclasses import dataclass, field
 from copy import deepcopy
 from typing import Optional
 
-from _firerate_sim import (
+from firerate_sim import (
     ProtocolParams, MarketImpactParams, AttackParams,
     update_spread_endogenous, classify_stress,
 )
