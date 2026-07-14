@@ -183,9 +183,9 @@ def run_mine_coen_day_dex(
             if total > 0:
                 # эндогенный cap: поток в пул = burned × rate × sell_through × price
                 # ограничиваем burned так, чтобы поток ≤ cap_usd
-                # cap_usd = clf_fr.v_cap_usd(pool_fr) 
+                cap_usd = clf_fr.v_cap_usd(pool_fr) 
                 # cap_usd = clf_fr.v_cap_usd(pool_fr) if lvl > 0 else float('inf')
-                cap_usd = float('inf')
+                # cap_usd = float('inf')
 
                 denom = proto.rate(lvl) * sell_through_rate * coen_price
                 cap_coen = cap_usd / denom if cap_usd < np.inf else np.inf
@@ -337,9 +337,9 @@ def probe_endogenous_dex(
                 total = float(requested.sum())
                 if total > 0:
                     if firerate_on:
-                        # cap_usd = clf.v_cap_usd(pool)
+                        cap_usd = clf.v_cap_usd(pool)
                         # cap_usd = clf.v_cap_usd(pool) if lvl > 0 else float('inf')
-                        cap_usd = float('inf')
+                        # cap_usd = float('inf')
 
                         rate = proto.rate(lvl)
                         denom = rate * sell_through_rate * pool.p_fair
